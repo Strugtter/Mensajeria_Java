@@ -14,6 +14,7 @@ import com.example.microServicioProyectoIntegrador.Services.ServiceDispatch;
 import org.aspectj.lang.annotation.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import static org.mockito.Mockito.*;
@@ -26,16 +27,18 @@ import static org.mockito.Mockito.when;
 @SpringBootTest
 public class TestServiceDispatchh {
 
-
+    @Mock
     private ServiceDispatch serviceDispatch;
-
+    @Mock
     private DispatchRepository dispatchRepository;
+    @Mock
     private CustomerRepository customerRepository;
-
+    @Mock
     private EmployeesRepository employeesRepository;
 
     @BeforeEach
     public void setUp() {
+
         customerRepository = mock(CustomerRepository.class);
         dispatchRepository = mock(DispatchRepository.class);
         employeesRepository = mock(EmployeesRepository.class);
