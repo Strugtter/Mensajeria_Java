@@ -28,7 +28,7 @@ public class ServiceCustomer {
     public void deleteCustomer(Integer cedula){
         this.customerRepository.deleteById(cedula);
     }
-
+//
     public Customer getCustomerCedula(Integer cedula){
         return  this.customerRepository.getReferenceById(cedula);
     }
