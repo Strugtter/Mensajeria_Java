@@ -20,6 +20,8 @@ dependencies {
 	runtimeOnly 'com.mysql:mysql-connector-j'
 	implementation group: 'io.springfox', name: 'springfox-boot-starter', version: '3.0.0'
 	// http://localhost:8080/swagger-ui/index.html
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	testImplementation 'org.springframework.security:spring-security-test'
 }
 
 tasks.named('test') {
