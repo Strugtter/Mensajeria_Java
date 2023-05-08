@@ -20,7 +20,7 @@ public class controllerCustomer {
         this.serviceCustomer = serviceCustomer;
     }
 
-    @CrossOrigin(origins = "http://127.0.0.1:5500")
+
     @PostMapping("/customer")
     public ResponseEntity<String> addCustomer(@RequestBody Customer customer){
         this.serviceCustomer.addCustomer(customer);
