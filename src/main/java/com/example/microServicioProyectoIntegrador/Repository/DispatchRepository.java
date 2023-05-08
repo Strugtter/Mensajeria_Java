@@ -9,5 +9,4 @@ import java.util.List;
 public interface DispatchRepository extends JpaRepository<Dispatch, String> {
    Dispatch findByNumberGuia(String numeroGuia);
    List<Dispatch> findByStateDispatch(String stateDispatch);
-
 }

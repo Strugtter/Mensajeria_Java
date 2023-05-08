@@ -16,8 +16,6 @@ public class DispatchDTO {
         this.stateRecive = stateRecive;
     }
 
-
-
     public String getNumeroGuia() {
         return numeroGuia;
     }

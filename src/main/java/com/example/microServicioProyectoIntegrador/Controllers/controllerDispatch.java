@@ -20,8 +20,6 @@ import java.util.List;
 public class controllerDispatch {
 
 
-
-
     private ServiceDispatch serviceDispatch;
     private CustomerRepository customerRepository;
     private DispatchDTO dispatchDTO;
@@ -32,8 +30,6 @@ public class controllerDispatch {
         this.serviceDispatch = serviceDispatch;
         this.customerRepository = customerRepository;
     }
-
-
 
     @PostMapping("/dispatch")
     public ResponseEntity<Object> addDispatch(@RequestBody Dispatch dispatch){
@@ -50,7 +46,6 @@ public class controllerDispatch {
         return this.serviceDispatch.getDispatchGuia(numberGuia);
     }
 
-
     @PutMapping("/dispatch")
     public ResponseEntity<Object> updateDispatch(@RequestBody UpdateDispatch updateDispatch) {
 
@@ -60,9 +55,6 @@ public class controllerDispatch {
         } catch (ChangeState | NotFoundException e) {
             return new ResponseEntity<>("Mensaje: " + e.getMessage(), HttpStatus.BAD_REQUEST);
         }
-
-
-
     }
 
     @GetMapping("/dispatch")
@@ -73,6 +65,5 @@ public class controllerDispatch {
         } catch (NotFoundException e) {
             return new ResponseEntity<>("Mensaje: " + e.getMessage(), HttpStatus.BAD_REQUEST);
         }
-
     }
 }

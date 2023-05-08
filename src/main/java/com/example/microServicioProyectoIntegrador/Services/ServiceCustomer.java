@@ -16,11 +16,9 @@ public class ServiceCustomer {
     public ServiceCustomer(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
     }
-
     public void addCustomer (Customer customer){
         this.customerRepository.save(customer);
     }
-
     public void updateCustomer(Customer customer){
         this.customerRepository.save(customer);
     }
