@@ -23,11 +23,11 @@ public class ServiceCustomer {
         this.customerRepository.save(customer);
     }
 
-    public void deleteCustomer(Integer cedula){
+    public void deleteCustomer(long cedula){
         this.customerRepository.deleteById(cedula);
     }
 //
-    public Customer getCustomerCedula(Integer cedula){
+    public Customer getCustomerCedula(long cedula){
         return  this.customerRepository.getReferenceById(cedula);
     }
 

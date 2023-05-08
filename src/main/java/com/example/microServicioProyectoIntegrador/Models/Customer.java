@@ -16,7 +16,7 @@ import javax.persistence.Table;
 public class Customer {
     @Id
     @Column(name="cedula")
-    private int cedula;
+    private long cedula;
 
     @Column(name="nombre")
     private String nombre;
@@ -39,7 +39,7 @@ public class Customer {
     public Customer(){
 
     }
-    public Customer(int cedula, String nombre, String apellido, long celular, String correoElectronico, String direccionResidencia, String ciudad) {
+    public Customer(long cedula, String nombre, String apellido, long celular, String correoElectronico, String direccionResidencia, String ciudad) {
 
         this.cedula = cedula;
         this.nombre = nombre;
@@ -50,7 +50,7 @@ public class Customer {
         this.ciudad = ciudad;
     }
 
-    public int getCedula() {
+    public long getCedula() {
         return cedula;
     }
 

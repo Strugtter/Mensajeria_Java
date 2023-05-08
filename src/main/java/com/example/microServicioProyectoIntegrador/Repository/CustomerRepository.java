@@ -3,8 +3,8 @@ package com.example.microServicioProyectoIntegrador.Repository;
 import com.example.microServicioProyectoIntegrador.Models.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CustomerRepository extends JpaRepository<Customer, Integer> {
+public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
-    boolean existsByCedula(Integer cedula);
+    boolean existsByCedula(long cedula);
 
 }

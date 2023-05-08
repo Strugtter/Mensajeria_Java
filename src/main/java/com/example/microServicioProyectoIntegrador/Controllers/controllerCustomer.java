@@ -36,13 +36,13 @@ public class controllerCustomer {
     }
 
     @DeleteMapping("/customer/{cedula}")
-    public ResponseEntity<String> deleteCustomer(@PathVariable("cedula") int cedula ){
+    public ResponseEntity<String> deleteCustomer(@PathVariable("cedula") long cedula ){
        this.serviceCustomer.deleteCustomer(cedula);
        return new ResponseEntity<>("El Cliente con cedula "+ cedula + " fue eliminado con éxito", HttpStatus.CREATED);
     }
 
     @GetMapping("/customer/{cedula}")
-    public Customer getCustomerCedula(@PathVariable ("cedula") int cedula){
+    public Customer getCustomerCedula(@PathVariable ("cedula") long cedula){
         return this.serviceCustomer.getCustomerCedula(cedula);
     }
 
