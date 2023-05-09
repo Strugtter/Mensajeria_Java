@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ServiceCustomer {
@@ -30,7 +31,8 @@ public class ServiceCustomer {
     }
 //
     public Customer getCustomerCedula(long cedula){
-        return  this.customerRepository.getReferenceById(cedula);
+        Optional<Customer> customerOptional = this.customerRepository.findById(cedula);
+        return customerOptional.orElseGet(null);
     }
 
     public List<Customer> getCustomer(){
