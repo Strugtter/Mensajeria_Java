@@ -8,6 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.PUT})
 @RequestMapping("/api/v1")
@@ -44,6 +46,11 @@ public class controllerCustomer {
     @GetMapping("/customer/{cedula}")
     public Customer getCustomerCedula(@PathVariable ("cedula") long cedula){
         return this.serviceCustomer.getCustomerCedula(cedula);
+    }
+
+    @GetMapping("/customer/")
+    public List<Customer> getCustomer(){
+        return this.serviceCustomer.getCustomer();
     }
 
 }
