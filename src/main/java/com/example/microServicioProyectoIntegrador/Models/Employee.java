@@ -102,4 +102,44 @@ public class Employee {
     public String getTipoEmpleado() {
         return tipoEmpleado;
     }
+
+    public void setCedula(int cedula) {
+        this.cedula = cedula;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public void setCelular(long celular) {
+        this.celular = celular;
+    }
+
+    public void setCorreoElectronico(String correoElectronico) {
+        this.correoElectronico = correoElectronico;
+    }
+
+    public void setDireccionResidencia(String direccionResidencia) {
+        this.direccionResidencia = direccionResidencia;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    public void setAntiguedadEmpresa(int antiguedadEmpresa) {
+        this.antiguedadEmpresa = antiguedadEmpresa;
+    }
+
+    public void setRh(String rh) {
+        this.rh = rh;
+    }
+
+    public void setTipoEmpleado(String tipoEmpleado) {
+        this.tipoEmpleado = tipoEmpleado;
+    }
 }
