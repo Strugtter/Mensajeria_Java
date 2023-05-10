@@ -402,8 +402,31 @@ https://annoyed-eyes-production.up.railway.app/api/v1/dispatch/ASD34512E
  
  # Diagrama UML
  
-![image](https://user-images.githubusercontent.com/94997816/232940825-fd70ff82-06a7-4ae4-bbbb-d84e2372ca8a.png)
+![image](Diagramas/DiagramaUML.jpg)
 
-# Diagrama Entidad-Relación
+# Diagrama de clases Cliente.
 
-![image](https://user-images.githubusercontent.com/94997816/232358215-f7fe1ee5-14bf-4204-9057-92b4ded816f6.png)
+![image](Diagramas/DiagramaClasesCustomer.jpg)
+
+# Diagrama de clases Empleado.
+
+![image](Diagramas/diagramaClasesEmployee.jpg)
+
+# Diagrama de clases Envio.
+![image](Diagramas/diagramaClasesDispatch.jpg)
+
+# Diagramas de flujo Envio.
+
+![image](Diagramas/DiagramaFlujoDispatch.drawio.png)
+![image](Diagramas/DiagramaFlujoDeleteEnvio.drawio.png)
+![image](Diagramas/DiagramaFlujoGetEnvio.drawio.png)
+![image](Diagramas/DiagramaFlujoPUTEnvio.drawio.png)
+
+# Diagramas de flujo Cliente.
+![image](Diagramas/DiagramaFlujoCliente.jpg)
+
+# Diagramas de flujo empleado.
+![image](Diagramas/DiagramaFlujoEmpleado.jpg)
+
+
+
