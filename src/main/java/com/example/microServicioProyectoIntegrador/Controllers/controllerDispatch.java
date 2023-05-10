@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.PUT})
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.PUT, RequestMethod.DELETE,RequestMethod.POST })
 @RequestMapping("/api/v1")
 public class controllerDispatch {
 
@@ -72,5 +72,11 @@ public class controllerDispatch {
     @GetMapping("/dispatch/")
     public List<Dispatch> getDispatch(){
         return this.serviceDispatch.getDispatch();
+    }
+
+    @DeleteMapping("/dispatch/{numberGuia}")
+    public ResponseEntity<String> deleteCustomer(@PathVariable("numberGuia") String numberGuia ){
+        this.serviceDispatch.deleteDispatch(numberGuia);
+        return new ResponseEntity<>("El Envío con numero de guia "+ numberGuia + " fue eliminado con éxito", HttpStatus.CREATED);
     }
 }

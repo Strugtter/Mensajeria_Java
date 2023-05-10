@@ -135,5 +135,9 @@ public class ServiceDispatch {
         return  this.dispatchRepository.findAll();
     }
 
+    public void deleteDispatch(String numberGuia){
+        this.dispatchRepository.deleteById(numberGuia);
+    }
+
 }
 
