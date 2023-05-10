@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.PUT, RequestMethod.DELETE,RequestMethod.POST })
 @RequestMapping("/api/v1")
 public class controllerEmployees {
 
