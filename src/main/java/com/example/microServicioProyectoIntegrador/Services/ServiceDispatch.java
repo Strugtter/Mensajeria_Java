@@ -131,5 +131,9 @@ public class ServiceDispatch {
         return this.dispatchRepository.findByStateDispatch(stateEnvio);
     }
 
+    public List<Dispatch> getDispatch(){
+        return  this.dispatchRepository.findAll();
+    }
+
 }
 

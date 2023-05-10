@@ -67,4 +67,9 @@ public class controllerDispatch {
             return new ResponseEntity<>("Mensaje: " + e.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }
+
+    @GetMapping("/dispatch/")
+    public List<Dispatch> getDispatch(){
+        return this.serviceDispatch.getDispatch();
+    }
 }
