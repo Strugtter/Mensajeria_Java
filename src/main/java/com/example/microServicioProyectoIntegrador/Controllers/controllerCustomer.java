@@ -14,7 +14,7 @@ import java.util.List;
 @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.PUT, RequestMethod.DELETE,RequestMethod.POST })
 @RequestMapping("/api/v1")
 public class controllerCustomer {
-
+//
 
     private ServiceCustomer serviceCustomer;
 
@@ -52,5 +52,4 @@ public class controllerCustomer {
     public List<Customer> getCustomer(){
         return this.serviceCustomer.getCustomer();
     }
-
 }
