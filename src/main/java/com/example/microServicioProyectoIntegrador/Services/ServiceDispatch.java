@@ -106,6 +106,9 @@ public class ServiceDispatch {
         if (employee == null) {
             throw new NotFoundException( "El empleado con cedula "+ updateDispatch.getCedulaEmpleado()+" no existe en nuestra compania"  );
         }
+        if (employee.getTipoEmpleado() != "REPARTIDOR") {
+            throw new NotFoundException( "El empleado con cedula "+ updateDispatch.getCedulaEmpleado()+" no tiene permisos para editar"  );
+        }
         if (employee.getTipoEmpleado().equals("REPARTIDOR") || employee.getTipoEmpleado().equals("COORDINADOR")){
             if(dispatch.getStateDispatch().equals("RECIBIDO") && updateDispatch.getEstadoEnvio().equals("EN RUTA")){
                 dispatch.setStateDispatch(updateDispatch.getEstadoEnvio());
