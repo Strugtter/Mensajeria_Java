@@ -2,6 +2,7 @@ package com.example.microServicioProyectoIntegrador.Services;
 
 
 import com.example.microServicioProyectoIntegrador.DTO.DispatchDTO;
+import com.example.microServicioProyectoIntegrador.DTO.DispatcinDTO;
 import com.example.microServicioProyectoIntegrador.Exception.ChangeState;
 import com.example.microServicioProyectoIntegrador.Exception.DispatchNoValidoException;
 import com.example.microServicioProyectoIntegrador.Exception.NotFoundException;
@@ -40,7 +41,7 @@ public class ServiceDispatch {
         this.customerRepository = customerRepository;
         this.employeesRepository = employeesRepository;
     }
-    public boolean validarCedula(Integer cedula) {
+    public boolean validarCedula(Long cedula) {
         String jpql = "SELECT c FROM Customer c WHERE c.cedula = :cedula";
         TypedQuery<Customer> query = em.createQuery(jpql, Customer.class);
         query.setParameter("cedula", cedula);
@@ -60,7 +61,7 @@ public class ServiceDispatch {
         return sb.toString();
     }
 
-    public DispatchDTO addDispatch (Dispatch dispatch) throws DispatchNoValidoException, RepositorioException{
+    public DispatchDTO addDispatch (DispatcinDTO dispatch) throws DispatchNoValidoException, RepositorioException{
         String typePackage="";
         Integer priceDispatch=0;
 
@@ -76,7 +77,7 @@ public class ServiceDispatch {
                     priceDispatch = 50000;
                 }
 
-        Dispatch dispatch1 = new Dispatch(generarCodigo(),dispatch.getCedulaCliente(), dispatch.getCityOrigin(), dispatch.getCityDestination(), dispatch.getAddressDestination(), dispatch.getNameRecive(), dispatch.getPhoneRecive(), LocalDate.now(), "RECIBIDO", priceDispatch,dispatch.getInsuredvalue(),dispatch.getWeight(), typePackage);
+        Dispatch dispatch1 = new Dispatch(generarCodigo(),dispatch.getCedulaCliente(), dispatch.getCityOrigin(), dispatch.getCityDestination(), dispatch.getAddressDestination(), dispatch.getNameRecive(), dispatch.getPhoneRecive(), LocalDate.now(), "RECIBIDO", priceDispatch,typePackage, dispatch.getInsuredvalue(),dispatch.getWeight());
 
                 if (dispatch1.getCedulaCliente() == 0 || dispatch1.getCityOrigin().isEmpty() || dispatch1.getCityDestination().isEmpty() || dispatch1.getAddressDestination().isEmpty() || dispatch1.getNameRecive().isEmpty() || dispatch1.getPhoneRecive()==0) {
                     throw new DispatchNoValidoException("Hay campos vacios");

@@ -1,6 +1,7 @@
 package com.example.microServicioProyectoIntegrador.Controllers;
 
 import com.example.microServicioProyectoIntegrador.DTO.DispatchDTO;
+import com.example.microServicioProyectoIntegrador.DTO.DispatcinDTO;
 import com.example.microServicioProyectoIntegrador.Exception.ChangeState;
 import com.example.microServicioProyectoIntegrador.Exception.DispatchNoValidoException;
 import com.example.microServicioProyectoIntegrador.Exception.NotFoundException;
@@ -32,9 +33,9 @@ public class controllerDispatch {
     }
 
     @PostMapping("/dispatch")
-    public ResponseEntity<Object> addDispatch(@RequestBody Dispatch dispatch){
+    public ResponseEntity<Object> addDispatch(@RequestBody DispatcinDTO dispatcinDTO){
         try {
-            dispatchDTO = this.serviceDispatch.addDispatch(dispatch);
+            dispatchDTO = this.serviceDispatch.addDispatch(dispatcinDTO);
             return new ResponseEntity<>(dispatchDTO, HttpStatus.CREATED);
         } catch (DispatchNoValidoException | RepositorioException e) {
             return new ResponseEntity<>("Mensaje: " + e.getMessage(), HttpStatus.BAD_REQUEST);

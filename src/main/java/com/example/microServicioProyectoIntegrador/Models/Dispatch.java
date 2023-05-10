@@ -18,7 +18,7 @@ public class Dispatch {
     private String numberGuia;
 
     @Column(name="cedulaCliente")
-    private Integer cedulaCliente;
+    private Long cedulaCliente;
 
     @Column(name="cityOrigin")
     private String cityOrigin;
@@ -45,21 +45,24 @@ public class Dispatch {
 
     @Column(name = "priceDispatch")
     private int priceDispatch;
-
+    @Column(name="typePackage")
+    private String typePackage;
     @Column(name="insuredvalue")
     private int insuredvalue;
 
     @Column(name="weight")
     private int weight;
 
-    @Column(name="typePackage")
-    private String typePackage;
+
 
     public Dispatch (){
 
     }
 
-    public Dispatch(String numberGuia, Integer cedulaCliente, String cityOrigin, String cityDestination, String addressDestination, String nameRecive, long phoneRecive, LocalDate deliveryTime, String stateDispatch, int priceDispatch, int insuredvalue, int weight, String typePackage) {
+
+
+
+    public Dispatch(String numberGuia, Long cedulaCliente, String cityOrigin, String cityDestination, String addressDestination, String nameRecive, long phoneRecive, LocalDate deliveryTime, String stateDispatch, int priceDispatch, String typePackage,int insuredvalue, int weight) {
         this.numberGuia = numberGuia;
         this.cedulaCliente = cedulaCliente;
         this.cityOrigin = cityOrigin;
@@ -83,7 +86,7 @@ public class Dispatch {
         return numberGuia;
     }
 
-    public Integer getCedulaCliente() {
+    public Long getCedulaCliente() {
         return cedulaCliente;
     }
 

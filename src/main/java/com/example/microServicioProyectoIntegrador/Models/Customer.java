@@ -77,4 +77,32 @@ public class Customer {
     public String getCiudad() {
         return ciudad;
     }
+
+    public void setCedula(long cedula) {
+        this.cedula = cedula;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public void setCelular(long celular) {
+        this.celular = celular;
+    }
+
+    public void setCorreoElectronico(String correoElectronico) {
+        this.correoElectronico = correoElectronico;
+    }
+
+    public void setDireccionResidencia(String direccionResidencia) {
+        this.direccionResidencia = direccionResidencia;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
 }
