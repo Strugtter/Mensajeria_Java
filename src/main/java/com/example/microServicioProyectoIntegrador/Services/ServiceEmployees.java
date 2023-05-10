@@ -7,6 +7,8 @@ import com.example.microServicioProyectoIntegrador.Repository.EmployeesRepositor
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class ServiceEmployees {
@@ -36,6 +38,8 @@ public class ServiceEmployees {
     }
 
 
-
+    public List<Employee> getEmployee(){
+        return  this.employeesRepository.findAll();
+    }
 
 }

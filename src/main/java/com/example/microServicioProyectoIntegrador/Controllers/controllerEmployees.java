@@ -1,12 +1,15 @@
 package com.example.microServicioProyectoIntegrador.Controllers;
 
 
+import com.example.microServicioProyectoIntegrador.Models.Customer;
 import com.example.microServicioProyectoIntegrador.Models.Employee;
 import com.example.microServicioProyectoIntegrador.Services.ServiceEmployees;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.PUT, RequestMethod.DELETE,RequestMethod.POST })
@@ -38,5 +41,10 @@ public class controllerEmployees {
     @GetMapping("/employees/{cedula}")
     public Employee getEmployeeCedula(@PathVariable("cedula") int cedula){
         return serviceEmployess.getEmployeeCedula(cedula);
+    }
+
+    @GetMapping("/employees/")
+    public List<Employee> getEmployee(){
+        return this.serviceEmployess.getEmployee();
     }
 }
